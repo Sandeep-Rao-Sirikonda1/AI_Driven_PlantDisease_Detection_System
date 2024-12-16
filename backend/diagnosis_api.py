@@ -10,8 +10,8 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # Constants
-MODEL_PATH = "leaf_classification_model_path"
-API_URL = "https://api-inference.huggingface.co/hugging_face_url"
+MODEL_PATH = r"C:\Users\avana\OneDrive\Desktop\lol\leaf model\leaf_classifier_model.keras"
+API_URL = "https://api-inference.huggingface.co/models/ozair23/mobilenet_v2_1.0_224-finetuned-plantdisease"
 HEADERS = {"Authorization": "Bearer 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"}
 
 # Initialize FastAPI
