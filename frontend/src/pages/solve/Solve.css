@@ -1,0 +1,181 @@
+.workspaceContainer {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workspaceContainer .case-section {
+  text-align: center;
+  margin-bottom: 40px;
+  /* Ensure space between image and card */
+}
+
+.workspaceContainer .case-section h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.workspaceContainer .case-section h2 {
+  font-size: 1.8rem;
+  color: #555;
+}
+
+.workspaceContainer .image-container {
+  position: relative;
+  display: inline-block;
+  /* Space below image section */
+}
+
+.workspaceContainer .leaf-image {
+  width: 300px;
+  max-height: 500px;
+  border: 3px solid #ddd;
+  box-shadow: 2px 2px 5px black, -2px -2px 5px black;
+  border-radius: 12px;
+  margin: 20px 0px;
+}
+
+.workspaceContainer .nameWrapper {
+  width: 100%;
+  /* position: absolute; */
+  /* bottom: 15px; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.workspaceContainer .bottom-left,
+.bottom-right {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* .bottom-left {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .bottom-right {
+    bottom: 15px;
+    right: 15px;
+  } */
+
+.workspaceContainer .card {
+  background: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  margin-top: 20px;
+  /* Ensure card is below image section */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0);
+}
+
+.workspaceContainer .section-heading {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(0, 239, 84, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom: 2px solid black;
+}
+
+.workspaceContainer .card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.workspaceContainer .form-group {
+  margin-bottom: 20px;
+}
+
+.workspaceContainer .form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.workspaceContainer .form-group input,
+.form-group textarea {
+  min-width: 200px;
+  width: 60%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.workspaceContainer .form-group input:focus,
+.form-group textarea:focus {
+  border-color: #38bdf8;
+  outline: none;
+  scale: 1.1;
+}
+
+.workspaceContainer .submit-button {
+  width: fit-content;
+  align-self: center;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.workspaceContainer .submit-button:hover {
+  background-color: #1d4ed8;
+}
+
+
+.diseaseInfoContainer {
+  margin-top: 10px;
+  display: grid;
+  grid-template-areas:
+    "metaDname dname"
+    "metaConf conf"
+    "confidenceParent confidenceindicator"
+    "metaLocation location"
+    "metaDate date"
+    "metaComment comment";
+  gap: 12px;
+
+  h4 {
+    margin-bottom: 10px;
+    color: rgb(22, 152, 5);
+  }
+}
+
+.metaDname,
+.metaConf,
+.metaLocation,
+.metaDate,
+.metaComment {
+  white-space: nowrap; /* Prevents wrapping for these elements */
+  text-align: left;
+}
+
+.date{
+  all: unset;
+}
+
+.location,
+.date,
+.comment,
+.dname,
+.conf{
+  text-align: left;
+}

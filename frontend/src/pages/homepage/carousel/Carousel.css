@@ -1,0 +1,112 @@
+.cropsForDiagnoseContainer {
+  height:max-content;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cropsForDiagnoseContainer .context {
+  font-family: "Itim", cursive;
+  font-weight: 500;
+  font-size: 26px;
+  margin: 2px 0px 20px 0px;
+  font-style: normal;
+  display: flex;
+  left: 10%;
+}
+
+.cropsForDiagnoseContainer .carouselWrapper {
+  display: inline-block;
+  width: 50vw;
+  height: 110px;
+  display: flex;
+  user-select: none;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.cropsForDiagnoseContainer .carouselWrapper:hover .crops{
+  animation-play-state: paused;
+}
+
+.cropsForDiagnoseContainer .crops {
+  width: 70px;
+  height: 70px;
+  margin-inline: 40px;
+  position: absolute;
+  left: max(calc((70px + 40px) * 12), 100%);
+  animation-name: scroll-left;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-delay: calc(30s/12 * (12 - var(--n)) * -1);
+  transition: 0.5s ease;
+}
+
+.cropsForDiagnoseContainer .crops img{
+  width: 100%;
+  height: 100%;
+}
+
+.cropsForDiagnoseContainer .crops p{
+  font-size: 10px;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+}
+
+@keyframes scroll-left {
+  to{
+    left: calc(-70px - 30px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .cropsForDiagnoseContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+  }
+}
+
+@media (max-width: 950px) {
+  .carouselWrapper {
+    width: 270px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 530px) {
+  .carouselWrapper {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 390px) {
+  .carouselWrapper {
+    width: 210px;
+    overflow: hidden;
+  }
+
+  .carouselWrapper .crops {
+    width: 60px;
+    height: 60px;
+    margin: 0px 10px;
+  }
+
+  .cropsForDiagnoseContainer .crops {
+    margin-inline: 5px;
+    left: max(calc((70px + 5px) * 12), 100%);
+  }
+}
