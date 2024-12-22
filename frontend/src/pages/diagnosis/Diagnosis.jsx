@@ -90,7 +90,6 @@ const Diagnosis = () => {
           body: formData,
         }
       );
-
       const data = await response.json();
       if (data.diagnosisId) {
         setDiagnosisId(data.diagnosisId); // Capture diagnosis ID

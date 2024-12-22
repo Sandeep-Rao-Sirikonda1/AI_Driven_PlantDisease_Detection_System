@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -46,6 +47,22 @@ mongoose
   .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("MongoDB Connection Error:", err));
+
+
+// fetching states
+app.get('/states/', async (req, res) => {
+  const response = await fetch("https://cdn-api.co-vin.in/api/v2/admin/location/states");
+  const data = await response.json();
+  res.json(data);
+});
+
+app.get('/districts/:stateId', async (req, res) => {
+  const stateId = req.params.stateId;
+  const response = await fetch(`https://cdn-api.co-vin.in/api/v2/admin/location/districts/${stateId}`);
+  const data = await response.json();
+  res.json(data);
+});
+
 
 // Routes
 
