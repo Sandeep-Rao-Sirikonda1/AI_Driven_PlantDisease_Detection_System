@@ -37,7 +37,7 @@ const SignUp = () => {
 
   // Fetch states on component mount
   useEffect(() => {
-    fetch("https://cdn-api.co-vin.in/api/v2/admin/location/states")
+    fetch(`http://localhost:5000/states`)
       .then((response) => response.json())
       .then((data) => setStates(data.states))
       .catch((error) => console.error("Error fetching states:", error));
@@ -47,7 +47,7 @@ const SignUp = () => {
   useEffect(() => {
     if (selectedState) {
       fetch(
-        `https://cdn-api.co-vin.in/api/v2/admin/location/districts/${selectedState}`
+        `http://localhost:5000/districts/${selectedState}`
       )
         .then((response) => response.json())
         .then((data) => setDistricts(data.districts))
