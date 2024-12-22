@@ -12,9 +12,9 @@ const axios = require('axios');
 const FormData = require('form-data'); 
 // Configure Cloudinary
 cloudinary.config({
-  cloud_name: 'dyxmgdk5g',
-  api_key: '883231668216414',
-  api_secret: 'oAkiFdxtUoNwSwrQg2dwQPSBPOM',
+  cloud_name: 'doexw2td1',
+  api_key: '362827942113859',
+  api_secret: 'AOVZWkJ_NBH6-YGVP4Rww-CmXs4',
 });
 
 // Setup storage for file uploads
@@ -38,15 +38,18 @@ const uploadDiagnosis = (req, res) => {
       const cloudinaryResult = await cloudinary.uploader.upload(filePath, { folder: 'diagnoses' });
       const imageUrl = cloudinaryResult.secure_url;
 
+      console.log('hello');
+
       // Step 2: Send Image to FastAPI for Classification
-      const fastApiUrl = 'http://localhost:8000/classify'; // Adjust based on your server
+      const fastApiUrl = 'http://127.0.0.1:8000/classify'; // Adjust based on your server
       const formData = new FormData();
       formData.append('file', fs.createReadStream(filePath));
-
+      
       const apiResponse = await axios.post(fastApiUrl, formData, {
         headers: formData.getHeaders(),
       });
-
+      console.log('helo hio')
+      
       const { disease_name: diseaseName, confidence_score: confidenceScore, output } = apiResponse.data;
 
       // Step 3: Handle Non-Leaf Response
@@ -84,7 +87,7 @@ const uploadDiagnosis = (req, res) => {
         disease_info: diseaseInfo[diseaseName],
       });
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error(error);
       res.status(500).json({ message: 'Failed to classify and process image', error: error.message });
     } finally {
       // Clean up local files and close DB connection
