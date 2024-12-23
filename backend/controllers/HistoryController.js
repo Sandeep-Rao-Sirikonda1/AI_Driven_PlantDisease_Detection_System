@@ -15,7 +15,7 @@ async function getClient() {
 async function fetchUserHistory(userId) {
     try {
         const client = await getClient();
-        const db = client.db("oz");
+        const db = client.db("plant_disease");
 
         // Fetch user history from UserHistory collection
         const userHistoryCollection = db.collection("UserHistory");

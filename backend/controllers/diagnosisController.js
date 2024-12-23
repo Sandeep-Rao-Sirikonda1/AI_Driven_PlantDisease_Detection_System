@@ -12,9 +12,9 @@ const axios = require('axios');
 const FormData = require('form-data'); 
 // Configure Cloudinary
 cloudinary.config({
-  cloud_name: 'doexw2td1',
-  api_key: '362827942113859',
-  api_secret: 'AOVZWkJ_NBH6-YGVP4Rww-CmXs4',
+  cloud_name: 'dqwhagwpc',
+  api_key: '851115938765161',
+  api_secret: '0N-31hUPJJfdsPt1rMYvtzWYXC0',
 });
 
 // Setup storage for file uploads
