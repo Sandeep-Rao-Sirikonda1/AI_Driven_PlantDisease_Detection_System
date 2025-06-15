@@ -38,7 +38,7 @@ const colors = [
 async function fetchPersonalAnalysisData(userId, timeFrame) {
   try {
     const client = await connectToDatabase();
-    const db = client.db("oz");
+    const db = client.db("plant_disease");
     const collection = db.collection("PersonalAnalysis");
 
     console.log(`Fetching data for user: ${userId} and timeFrame: ${timeFrame}`);
@@ -96,7 +96,7 @@ async function fetchPersonalAnalysisData(userId, timeFrame) {
 async function fetchLocationDataFromDB(location, timeFrame) {
   try {
     const client = await connectToDatabase();
-    const db = client.db("oz");
+    const db = client.db("plant_disease");
     const collection = db.collection("LocationAnalysis");
     console.log(`Fetching data for location: ${location} and timeFrame: ${timeFrame}`);
 

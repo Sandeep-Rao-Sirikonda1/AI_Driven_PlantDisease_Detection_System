@@ -32,7 +32,7 @@
   margin-bottom: 10px;
 }
 .postTitle{
- word-wrap:break-word;
+ font-size: medium;
 }
 /* Image styling */
 .image {

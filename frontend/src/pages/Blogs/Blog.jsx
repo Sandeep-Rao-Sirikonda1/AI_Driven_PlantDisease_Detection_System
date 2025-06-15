@@ -132,6 +132,7 @@ const Blog = () => {
       try {
         const response = await fetch(`http://${LOCAL_IP}:5000/posts?username=${username}`);
         const data = await response.json();
+        console.log(data);
         setBlogs(data);
       } catch (error) {
         console.error("Error fetching blogs:", error);
@@ -193,7 +194,7 @@ const Blog = () => {
         {blogs.map(blog => (
           <div className="card" key={blog.id}>
             <h3 className="username">{blog.username}</h3>
-            {blog.title && <h2 className="postTitle">{blog.title}</h2>}
+             <h2 className="postTitle">{blog.title}</h2>
 
             {blog.image && (
               <img
