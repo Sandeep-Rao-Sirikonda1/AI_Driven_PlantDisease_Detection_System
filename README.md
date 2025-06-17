@@ -1,1 +1,1 @@
-# AI-Driven-Plant-Disease-Detection
+# AI-Driven-Plant-Disease-Detection System with features:
